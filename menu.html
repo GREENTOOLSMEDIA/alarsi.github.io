@@ -1,0 +1,185 @@
+<!-- ✅ MENÚ PAULINA DOTS (FINAL) -->
+<nav class="main-menu" role="navigation" aria-label="Menú principal">
+  <ul>
+    <li><a href="https://www.paulinadots.com/aboutme.html">About Me</a></li>
+
+    <li class="logo-item">
+      <a href="https://www.paulinadots.com/index.html" aria-label="Inicio Paulina Dots">
+        <img 
+          src="https://www.paulinadots.com/images/PaulinaDotsWhiteLogo.svg"
+          alt="Paulina Dots Logo"
+          class="menu-logo"
+          width="180"
+          height="60"
+          decoding="async"
+          fetchpriority="high"
+        />
+      </a>
+    </li>
+
+    <li><a href="https://www.paulinadots.com/streaming.html">Streaming</a></li>
+    <li><a href="https://www.paulinadots.com/dotspod.html">DotsPod</a></li>
+    <li><a href="https://www.paulinadots.com/fanart/">Fan Art</a></li>
+
+
+    <!-- Se ocultan en móvil -->
+    <li class="mobile-only"><a href="https://www.paulinadots.com/project.html">Project</a></li>
+<li class="mobile-only"><a href="https://www.paulinadots.com/blog/">Blog</a></li>
+
+    <li class="mobile-only"><a href="https://www.paulinadots.com/shorts.html">Reels</a></li>
+    <li class="mobile-only"><a href="https://www.paulinadots.com/ai-performance.html">Brain</a></li>
+    <li class="mobile-only"><a href="https://www.paulinadots.com/paudotsgpt.html">Gallery</a></li>
+    <li class="mobile-only"><a href="https://www.paulinadots.com/hablemos.html">Hablemos</a></li>
+  </ul>
+</nav>
+
+<style>
+  body, .main-menu {
+    font-family: 'Helvetica Neue', sans-serif;
+  }
+
+  .main-menu {
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    top: 20px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    width: fit-content;
+    min-width: 280px;
+    max-width: 95%;
+    padding: 12px 18px;
+    background-color: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(12px);
+    border-radius: 999px;
+    z-index: 1000;
+  }
+
+  .main-menu ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    flex-wrap: nowrap;
+    align-items: center;
+  }
+
+  .main-menu li {
+  margin-left: -4px; /* 🔥 superpone cápsulas muy levemente */
+    display: flex;
+    align-items: center;
+  }
+
+  .main-menu a {
+    color: white;
+    text-decoration: none;
+    font-weight: normal;
+    font-size: 12px;
+    padding: 8px 16px;
+    border-radius: 999px;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    white-space: nowrap;
+  }
+
+  .main-menu a.active {
+    background: white;
+    color: black;
+  }
+
+  .main-menu a:hover:not(.active) {
+    background: rgba(255, 255, 255, 0.2);
+    transform: scale(1.05);
+  }
+
+  .menu-logo {
+    height: 30px;
+    width: auto;
+    opacity: 0.9;
+    filter: brightness(0) invert(1);
+  }
+
+  /* ✅ 🚨 RESPONSIVE + SAFE AREA iPHONE (FINAL) */
+@media screen and (max-width: 768px) {
+
+  .main-menu {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    width: 100%;
+    justify-content: space-around;
+
+    /* safe-area + padding reducido */
+    padding-top: calc(6px + env(safe-area-inset-top, 0px));
+    padding-bottom: 6px;
+    padding-left: 8px;
+    padding-right: 8px;
+
+    border-radius: 0;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* ✅ SIN ESPACIO ENTRE CÁPSULAS */
+  .main-menu ul {
+    gap: 0 !important;
+  }
+
+  /* ✅ PEGAR CÁPSULAS ENTRE SÍ EN MÓVIL TAMBIÉN */
+  .main-menu li {
+    margin-left: -4px !important;
+  }
+
+  /* ✅ CÁPSULAS MÁS COMPACTAS */
+  .main-menu a {
+    font-size: 9px;
+    padding: 3px 8px;
+    gap: 4px;
+    letter-spacing: -0.02em;
+    white-space: nowrap;
+  }
+
+  /* reduce el espacio que empuja el contenido */
+  body {
+    padding-top: calc(44px + env(safe-area-inset-top, 0px));
+  }
+
+  /* logo más pequeño */
+  .menu-logo {
+    height: 18px;
+    width: auto;
+  }
+
+  /* oculta secundarios sin dejar hueco */
+  .mobile-only,
+  li.mobile-only {
+    display: none !important;
+  }
+
+  /* evitar desbordes horizontales */
+  .main-menu ul > li { flex-shrink: 1; min-width: 0; }
+  .main-menu a { min-width: 0; }
+}
+
+</style>
+
+<script>
+/* ✅ Marca activa */
+const currentPath = window.location.pathname.replace(/\/$/, '');
+document.querySelectorAll('.main-menu a').forEach(link => {
+  const linkPath = new URL(link.href).pathname.replace(/\/$/, '');
+  link.classList.toggle('active', linkPath === currentPath);
+});
+</script>
+
+<script>
+/* ✅ Fix Safari */
+const styles = document.querySelectorAll("style");
+styles.forEach(style => {
+  const cloned = document.createElement("style");
+  cloned.innerHTML = style.innerHTML;
+  document.head.appendChild(cloned);
+});
+</script>
