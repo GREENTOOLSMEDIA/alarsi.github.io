@@ -123,8 +123,6 @@
       height: auto;
       z-index: 2;
       animation: float 7s ease-in-out infinite;
-      filter: drop-shadow(0 0 25px rgba(255,130,90,0.5));
-      opacity: 0.95;
     }
 
     @keyframes float {
@@ -166,15 +164,15 @@
       <canvas id="siriCanvas"></canvas>
       <div id="siriWave"></div>
 
-      <!-- logo de ALARSI flotando -->
-   <img src="./images/alarsi-logo.svg"
+      <!-- ALARSI flotando -->
+   <img src="./images/alarsi-logo-mask.svg"
   alt="Logo ALARSI Inteligencia Artificial, Creatividad y Tecnología."
   class="alarsi-logo-hero"
 />
     </div>
   </div>
 
-  <!-- SECCIÓN DE TEXTO CORPORATIVO -->
+  <!-- ALARSI SECCION CORPORATIVO -->
   <section>
     <h2>Soluciones inteligentes desarrolladas con creatividad, tecnología e integración de Inteligencia Artificial.</h2>
 
@@ -217,7 +215,7 @@ loadBlock("footer-container", "./footer.html", "footer.html");
 
 
   <!-- ======================= -->
-  <!-- BACKGROUND RADIAL ANIMATION -->
+  <!-- ALARSI BACKGROUND RADIAL ANIMATION -->
   <!-- ======================= -->
   <script>
     const bgCanvas = document.getElementById("siriCanvas");
@@ -256,10 +254,10 @@ loadBlock("footer-container", "./footer.html", "footer.html");
 
 
   <!-- ======================= -->
-  <!-- SIRI WAVE RESTAURADO -->
+  <!-- ALARSI SIRI WAVE -->
   <!-- ======================= -->
   <script>
-    /* === SiriWave === */
+    /* === Alarsi SiriWave === */
     function SiriWave9Curve(opt){opt=opt||{};this.controller=opt.controller;this.color=opt.color;this.tick=0;this.respawn();}
     SiriWave9Curve.prototype.respawn=function(){this.amplitude=0.3+Math.random()*0.7;this.seed=Math.random();this.open_class=2+(Math.random()*3)|0;};
     SiriWave9Curve.prototype.equation=function(i){var p=this.tick;var y=-1*Math.abs(Math.sin(p))*this.controller.amplitude*this.amplitude*this.controller.MAX*Math.pow(1/(1+Math.pow(this.open_class*i,2)),2);if(Math.abs(y)<0.001){this.respawn();}return y;};
