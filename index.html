@@ -114,27 +114,30 @@
       opacity: 0.55;
     }
 
-        .alarsi-logo-hero {
-      position: absolute;
-      bottom: 0;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 400px;
-      height: auto;
-      z-index: 2;
-      animation: float 7s ease-in-out infinite;
-    }
+  /* ALARSI logo mask */
+.alarsi-logo-hero {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, 0);
+  width: 65%;          /* Escala relativa al 16:9 */
+  max-width: 950px;    /* Limita tamaño máximo en desktop */
+  height: auto;
+  z-index: 3;          /* Encima del canvas */
+  object-fit: contain; /* Respeta las proporciones del SVG */
+  pointer-events: none;
+  animation: float 7s ease-in-out infinite;
+}
 
-    @keyframes float {
-      0%,
-      100% {
-        transform: translate(-50%, 0);
-      }
-
-      50% {
-        transform: translate(-50%, -18px);
-      }
-    }
+/* Animación suave */
+@keyframes float {
+  0%, 100% {
+    transform: translate(-50%, 0);
+  }
+  50% {
+    transform: translate(-50%, -16px);
+  }
+}
     
 
     /* ======================= */
