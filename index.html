@@ -114,27 +114,41 @@
       opacity: 0.55;
     }
 
-    .alarsi-logo-hero {
-      position: absolute;
-      bottom: 0;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 400px;
-      height: auto;
-      z-index: 2;
-      animation: float 7s ease-in-out infinite;
-    }
+   /* === LOGO COMO MÁSCARA SOBRE EL HERO ========================= */
+.hero-logo-mask {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
 
-    @keyframes float {
-      0%,
-      100% {
-        transform: translate(-50%, 0);
-      }
+  width: min(750px, 70vw); /* tamaño dinámico pero controlado */
+  aspect-ratio: 16 / 9;
 
-      50% {
-        transform: translate(-50%, -18px);
-      }
-    }
+  /* 👇 SVG usado como máscara (recorta el fondo) */
+  -webkit-mask-image: url("images/alarsi-logo.svg");
+  mask-image: url("images/alarsi-logo.svg");
+  mask-repeat: no-repeat;
+  -webkit-mask-repeat: no-repeat;
+  mask-position: center;
+  -webkit-mask-position: center;
+  mask-size: contain;
+  -webkit-mask-size: contain;
+
+  /* Lo que se verá dentro de la máscara */
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(20px);
+
+  /* Suavidad del efecto */
+  filter: drop-shadow(0 0 30px rgba(255, 150, 100, 0.4));
+
+  animation: float 6s ease-in-out infinite;
+}
+
+/* Animación flotante */
+@keyframes float {
+  0%, 100% { transform: translate(-50%, 0); }
+  50% { transform: translate(-50%, -10px); }
+}
 
     /* ======================= */
     section {
@@ -165,7 +179,7 @@
       <div id="siriWave"></div>
 
       <!-- ALARSI flotando -->
-   <img src="./images/alarsi-logo-mask.svg"
+   <img src="./images/alarsi-logo.svg"
   alt="Logo ALARSI Inteligencia Artificial, Creatividad y Tecnología."
   class="alarsi-logo-hero"
 />
