@@ -247,7 +247,7 @@ loadBlock("footer-container", "./footer.html", "footer.html");
     const gradient = bgCtx.createRadialGradient(cx, cy, 0, cx, cy, radius);
 
     // 🔥 Ciclo suave entre ROJO → AZUL → VERDE → ROJO
-    const colors = [0, 210, 120]; // hue values in HSL (red, blue, green)
+    const colors = [0, 120, 210]; // hue values in HSL (red, green, blue)
 
     const index = Math.floor(t) % colors.length;
     const nextIndex = (index + 1) % colors.length;
