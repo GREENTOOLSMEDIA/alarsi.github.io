@@ -143,24 +143,30 @@
 
   </main>
 
-  <!-- 🟤 FOOTER -->
-  <div id="footer-container" class="debug-box">⚠️ footer.html no cargado (modo local)</div>
+<!-- 🟤 FOOTER -->
+<div id="footer-container" class="debug-box">⚠️ footer.html no cargado (modo local)</div>
 
-  <!-- JS modular para cargar menú/footer -->
-  <script>
-    async function loadBlock(id, url) {
-      try {
-        const res = await fetch(url);
-        if (!res.ok) throw new Error();
-        document.getElementById(id).innerHTML = await res.text();
-      } catch (_) {}
+<!-- JS modular para cargar menú y footer -->
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    loadBlock("globalMenu", "/menu.html");
+    loadBlock("footer-container", "/footer.html");
+  });
+
+  async function loadBlock(id, url) {
+    try {
+      const res = await fetch(url, { mode: "cors" });
+      if (!res.ok) throw new Error(res.status);
+      document.getElementById(id).innerHTML = await res.text();
+    } catch (error) {
+      console.warn(`⚠️ No cargado: ${url} (${error})`);
     }
-    loadBlock("globalMenu", "https://www.alarsi.com/menu.html");
-    loadBlock("footer-container", "https://www.alarsi.com/footer.html");
-  </script>
+  }
+</script>
 
-  <!-- 🔊 ALARSI SIRI WAVE -->
-  <script src="https://www.alarsi.com/js/siriwave-alarsi.js"></script>
+<!-- 🔊 ALARSI SIRI WAVE -->
+<script src="https://www.alarsi.com/js/siriwave-alarsi.js"></script>
 
 </body>
 </html>
+
