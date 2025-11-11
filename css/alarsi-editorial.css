@@ -87,3 +87,11 @@ ul li, ol li {
   margin-bottom: 1.4rem;
   line-height: 1.7;
 }
+/* Alarsi Firma */
+.alarsi-center {
+  text-align: center;
+  display: block;
+  margin-top: 2rem;
+  opacity: .8;
+}
+
