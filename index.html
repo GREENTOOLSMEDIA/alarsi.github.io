@@ -246,9 +246,23 @@ loadBlock("footer-container", "./footer.html", "footer.html");
       const gradient = bgCtx.createRadialGradient(cx, cy, 0, cx, cy, radius);
       const hue = 20 + 30 * Math.sin(t);
 
-      gradient.addColorStop(0, `hsla(${hue},100%,65%,0.45)`);
-      gradient.addColorStop(0.5, `hsla(${hue + 25},100%,55%,0.25)`);
-      gradient.addColorStop(1, "transparent");
+     / Ciclo suave entre ROJO → AZUL → VERDE → ROJO
+const colors = [
+  0,   // rojo
+  210, // azul
+  120  // verde
+];
+
+// interpolación para transición suave
+const index = Math.floor(t) % colors.length;
+const nextIndex = (index + 1) % colors.length;
+const progress = t % 1;
+
+const hue = colors[index] * (1 - progress) + colors[nextIndex] * progress;
+
+gradient.addColorStop(0, `hsla(${hue},100%,60%,0.45)`);
+gradient.addColorStop(0.5, `hsla(${hue},100%,50%,0.25)`);
+gradient.addColorStop(1, "transparent");
 
       bgCtx.fillStyle = gradient;
       bgCtx.fillRect(0, 0, bgCanvas.width, bgCanvas.height);
@@ -314,7 +328,7 @@ loadBlock("footer-container", "./footer.html", "footer.html");
 
     SiriWave9.prototype.start=function(){this.run=true;this._draw();};
     SiriWave9.prototype.stop=function(){this.run=false;};
-    SiriWave9.prototype.COLORS=[[255,0,0],[0,255,0],[0,0,255]];
+    SiriWave9.prototype.COLORS=[[255,0,0],[0,255,0],[0,0,255]]; // COLORS
 
     (function init(){
       function createWave(){
