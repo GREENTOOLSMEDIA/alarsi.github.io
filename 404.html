@@ -5,6 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>ALARSI — Error 404 · Página no encontrada</title>
 
+  <!-- 🚫 Evita indexación -->
+  <meta name="robots" content="noindex, nofollow" />
+
   <!-- ✅ CSS global -->
   <link rel="preload" href="https://www.alarsi.com/css/alarsi-editorial.css" as="style">
   <link rel="stylesheet" href="https://www.alarsi.com/css/alarsi-editorial.css">
@@ -44,7 +47,11 @@
         "url": "https://www.alarsi.com",
         "logo": "https://www.alarsi.com/images/alarsi-logo.svg",
         "description": "Soluciones inteligentes con creatividad, tecnología e IA.",
-        "address": { "@type": "PostalAddress", "addressLocality": "Santiago", "addressCountry": "CL" }
+        "address": { 
+          "@type": "PostalAddress",
+          "addressLocality": "Santiago",
+          "addressCountry": "CL"
+        }
       },
       {
         "@type": "WebPage",
