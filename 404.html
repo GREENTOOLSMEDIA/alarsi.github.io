@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ALARSI — Error 404 · Página no encontrada</title>
+
+  <!-- ✅ CSS global -->
+  <link rel="preload" href="https://www.alarsi.com/css/alarsi-editorial.css" as="style">
+  <link rel="stylesheet" href="https://www.alarsi.com/css/alarsi-editorial.css">
+
+  <!-- 🔗 Canonical & favicon -->
+  <link rel="canonical" href="https://www.alarsi.com/404.html" />
+  <link rel="icon" type="image/svg+xml" href="/alarsi-favicon.svg">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+  <!-- 🧠 Meta principal -->
+  <meta name="description" content="La página que buscas no existe o fue movida. Vuelve a ALARSI para continuar explorando creatividad, IA, automatización y desarrollo." />
+  <meta name="keywords" content="error 404, página no encontrada, ALARSI, IA, automatización, creatividad" />
+  <meta name="author" content="ALARSI" />
+
+  <!-- 🌐 Open Graph -->
+  <meta property="og:title" content="ALARSI — Error 404" />
+  <meta property="og:description" content="La página que buscas no existe. Regresa al inicio de ALARSI para continuar explorando." />
+  <meta property="og:image" content="https://www.alarsi.com/images/preview/alarsi-preview.jpg" />
+  <meta property="og:url" content="https://www.alarsi.com/404.html" />
+  <meta property="og:type" content="website" />
+
+  <!-- 🐦 Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="ALARSI — Error 404" />
+  <meta name="twitter:description" content="La página que buscas no existe o fue movida. Vuelve al inicio de ALARSI." />
+  <meta name="twitter:image" content="https://www.alarsi.com/images/preview/alarsi-preview.jpg" />
+
+  <!-- 🧩 Schema.org -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "name": "ALARSI",
+        "url": "https://www.alarsi.com",
+        "logo": "https://www.alarsi.com/images/alarsi-logo.svg",
+        "description": "Soluciones inteligentes con creatividad, tecnología e IA.",
+        "address": { "@type": "PostalAddress", "addressLocality": "Santiago", "addressCountry": "CL" }
+      },
+      {
+        "@type": "WebPage",
+        "@id": "https://www.alarsi.com/404.html",
+        "url": "https://www.alarsi.com/404.html",
+        "name": "Error 404 — Página no encontrada",
+        "inLanguage": "es",
+        "dateModified": "2025-11-14",
+        "publisher": { "@id": "https://www.alarsi.com" },
+        "description": "La página que buscas no existe o fue movida."
+      }
+    ]
+  }
+  </script>
+</head>
+
+<body>
+  <!-- 🟡 MENU -->
+  <div id="globalMenu" class="debug-box">⚠️ menu.html no cargado (modo local)</div>
+
+  <main>
+    <!-- HERO -->
+    <div class="hero">
+      <div id="siriWave"></div>
+    </div>
+
+    <!-- ========================================= -->
+    <!-- ALARSI — ERROR 404 -->
+    <!-- ========================================= -->
+    <section id="paper">
+      <article id="alarsilab-paper-404" aria-labelledby="error404-title">
+        <header>
+          <h1 id="error404-title">
+            Error 404.
+            <span class="subtitle">La página que buscas no existe.</span>
+          </h1>
+          <p class="quote">“No es un error. Es una ruta que ya no forma parte del sistema.”</p>
+        </header>
+
+        <section id="que-paso">
+          <h2>Qué ocurrió</h2>
+          <p>La URL que intentaste abrir no existe, fue renombrada o dejó de estar disponible. Esto ocurre cuando una ruta cambia dentro del sistema o cuando el contenido fue reorganizado en el sitio.</p>
+        </section>
+
+        <section id="que-hacer">
+          <h2>Cómo continuar</h2>
+          <p>Puedes volver al inicio para seguir explorando creatividad, integración y automatización con inteligencia artificial.</p>
+
+          <p class="alarsi-center" style="margin-top: 30px;">
+            <a href="https://www.alarsi.com" class="alarsi-button">
+              Volver al inicio → 
+            </a>
+          </p>
+        </section>
+
+        <p class="alarsi-center">.: ALARSI :.</p>
+      </article>
+    </section>
+  </main>
+
+  <!-- 🟤 FOOTER -->
+  <div id="footer-container" class="debug-box">⚠️ footer.html no cargado (modo local)</div>
+
+  <!-- JS modular para cargar menú y footer -->
+  <script>
+    // === Fetch modular ===
+    async function loadBlock(id, url, label) {
+      try {
+        const res = await fetch(url);
+        if (!res.ok) throw new Error("No se encontró " + url);
+        document.getElementById(id).innerHTML = await res.text();
+        document.getElementById(id).classList.remove("debug-box");
+      } catch (err) {
+        console.warn(`⚠️ ${label} no se pudo cargar:`, err.message);
+      }
+    }
+
+    loadBlock("globalMenu", "./menu.html", "menu.html");
+    loadBlock("footer-container", "./footer.html", "footer.html");
+  </script>
+
+  <!-- 🔊 SIRI WAVE -->
+  <script src="https://www.alarsi.com/js/siriwave-alarsi.js"></script>
+</body>
+</html>
